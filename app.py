@@ -1,7 +1,9 @@
-from models.mood import Mood
 from flask import Flask, render_template, request
+from models.mood import Mood
 
 app = Flask(__name__)
+
+mood_entries = []
 
 @app.route("/", methods=["GET", "POST"])
 def index():

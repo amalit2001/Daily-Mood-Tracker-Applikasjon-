@@ -1,3 +1,4 @@
+from models.mood import Mood
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -9,9 +10,11 @@ def index():
         energy = request.form["energy"]
         note = request.form["note"]
 
-        print("Humør:", mood)
-        print("Energi:", energy)
-        print("Notat:", note)
+        new_entry = Mood(mood, energy, note)
+        mood_entries.append(new_entry)
+
+        print("Ny registrering:")
+        print(new_entry)
 
     return render_template("index.html")
 

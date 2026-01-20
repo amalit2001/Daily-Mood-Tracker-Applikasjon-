@@ -18,7 +18,7 @@ def index():
         print("Ny registrering:")
         print(new_entry)
 
-    return render_template("index.html")
+    return render_template("index.html", moods=mood_entries)
 
 if __name__ == "__main__":
     app.run(debug=True)

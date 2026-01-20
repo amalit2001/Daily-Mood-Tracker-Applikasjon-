@@ -66,3 +66,21 @@ button:hover {
     background-color: #6a978f;
 }
 
+h2 {
+    margin-top: 40px;
+    font-weight: 400;
+    color: #4f6f68;
+}
+
+.mood-list {
+    margin-top: 20px;
+}
+
+.mood-card {
+    background-color: #f4f7f5;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+

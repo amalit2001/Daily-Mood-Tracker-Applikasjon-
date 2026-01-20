@@ -3,13 +3,14 @@ from models.mood import Mood # Importerer Mood-klassen
 from database import create_table, insert_mood, get_all_moods # Importerer database-funksjoner
 
 app = Flask(__name__) #Oppretter Flask-applikasjonen
-create_table() #Oppretter database og tabell ved oppstart
+create_table() #Sikrer at databasen er klar før applikasjonen brukes
 
+#Hovedrute for visning og innsending av humørdata
 @app.route("/", methods=["GET", "POST"]) 
 def index():
     saved = False 
 
-    if request.method == "POST":
+    if request.method == "POST": #Håndterer skjema-innsending
         mood = request.form["mood"]
         energy = request.form["energy"]
         note = request.form["note"]

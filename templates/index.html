@@ -38,13 +38,13 @@
             <h2>Tidligere registreringer</h2>
 
             <div class="mood-list">
-                {% for entry in moods %}
+                {% for mood, energy, note, date in moods %}
                     <div class="mood-card">
-                        <strong>{{ entry.get_date() }}</strong><br>
-                        Humør: {{ entry.get_mood() }}<br>
-                        Energi: {{ entry.get_energy() }}<br>
-                        {% if entry.get_note() %}
-                            <em>{{ entry.get_note() }}</em>
+                        <strong>{{ date }}</strong><br>
+                        Humør: {{ mood }}<br>
+                        Energi: {{ energy }}<br>
+                        {% if note %}
+                            <em>{{ note }}</em>
                         {% endif %}
                     </div>
                 {% endfor %}

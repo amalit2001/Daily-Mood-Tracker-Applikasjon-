@@ -9,6 +9,24 @@
     <div class="container">
         <h1>Daily Mood Tracker 🍃</h1>
         <p>Understand your mood and energy patterns.</p>
+        <form method="POST">
+    <label for="mood">Humør i dag</label>
+    <select name="mood" id="mood" required>
+        <option value="">Velg</option>
+        <option value="Glad">Glad 😊</option>
+        <option value="Rolig">Rolig 😌</option>
+        <option value="Stresset">Stresset 😵</option>
+        <option value="Trist">Trist 😔</option>
+    </select>
+
+    <label for="energy">Energinivå (1–5)</label>
+    <input type="number" id="energy" name="energy" min="1" max="5" required>
+
+    <label for="note">Kort refleksjon</label>
+    <textarea id="note" name="note" rows="4"></textarea>
+
+    <button type="submit">Lagre</button>
+</form>
     </div>
 </body>
 </html>

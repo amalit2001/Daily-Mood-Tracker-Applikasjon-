@@ -1,0 +1,97 @@
+/* Reset litt standard-styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f4f7f5;
+    color: #2f3e3a;
+}
+
+/* Sentral container */
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+h1 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #5f7a73;
+}
+
+form {
+    margin-top: 30px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccd8d4;
+    font-size: 1rem;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background-color: #7aa89f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6a978f;
+}
+
+h2 {
+    margin-top: 40px;
+    font-weight: 400;
+    color: #4f6f68;
+}
+
+.mood-list {
+    margin-top: 20px;
+}
+
+.mood-card {
+    background-color: #f4f7f5;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+/* Rolig, tilgjengelig, høy kontrast */
+.success-message {
+    background-color: #e6f2ef;
+    color: #2f6f65;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+

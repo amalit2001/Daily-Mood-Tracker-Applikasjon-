@@ -7,6 +7,8 @@ mood_entries = []
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    saved = False
+
     if request.method == "POST":
         mood = request.form["mood"]
         energy = request.form["energy"]
@@ -15,10 +17,9 @@ def index():
         new_entry = Mood(mood, energy, note)
         mood_entries.append(new_entry)
 
-        print("Ny registrering:")
-        print(new_entry)
+        saved = True
 
-    return render_template("index.html", moods=mood_entries)
+    return render_template("index.html", moods=mood_entries, saved=saved)
 
 if __name__ == "__main__":
     app.run(debug=True)

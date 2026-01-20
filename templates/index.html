@@ -9,6 +9,11 @@
     <div class="container">
         <h1>Daily Mood Tracker 🍃</h1>
         <p>Understand your mood and energy patterns.</p>
+        {% if saved %}
+    <div class="success-message">
+        Humør registrert 🌿
+    </div>
+{% endif %}
 
         <form method="POST">
             <label for="mood">Humør i dag</label>

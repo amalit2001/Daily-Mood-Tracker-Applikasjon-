@@ -84,3 +84,14 @@ h2 {
     font-size: 0.95rem;
 }
 
+/* Rolig, tilgjengelig, høy kontrast */
+.success-message {
+    background-color: #e6f2ef;
+    color: #2f6f65;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+

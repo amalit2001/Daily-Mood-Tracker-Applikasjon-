@@ -1,3 +1,5 @@
+# Brukes for å unngå at midlertidige filer og miljøfiler lastes opp til GitHub
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

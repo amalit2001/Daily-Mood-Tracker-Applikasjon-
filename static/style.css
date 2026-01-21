@@ -1,4 +1,4 @@
-/* Reset litt standard-styling */
+/* Setter grunnleggende styling for hele nettsiden */
 body {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ body {
     color: #2f3e3a;
 }
 
-/* Sentral container */
+/* Samler innhold i midten av siden */
 .container {
     max-width: 600px;
     margin: 80px auto;
@@ -18,6 +18,7 @@ body {
     text-align: center;
 }
 
+/* Stil for overskrifter og brødtekst, gir et rolig og oversiktlig uttrykk. */
 h1 {
     font-weight: 400;
     margin-bottom: 10px;
@@ -28,6 +29,7 @@ p {
     color: #5f7a73;
 }
 
+/* Styling av skjemaet, for enkel og brukervennlig registrering */
 form {
     margin-top: 30px;
     text-align: left;
@@ -84,7 +86,7 @@ h2 {
     font-size: 0.95rem;
 }
 
-/* Rolig, tilgjengelig, høy kontrast */
+/* Visuell tilbakemelding til bruker når en registrering er lagret */
 .success-message {
     background-color: #e6f2ef;
     color: #2f6f65;

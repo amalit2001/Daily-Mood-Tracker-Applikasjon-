@@ -40,7 +40,8 @@
 
         <!--Viser tidligere registrerte humørlogger hvis de finnes-->
         {% if moods %} 
-            <h2>Tidligere registreringer</h2>
+            <details>
+              <summary>Se tidligere registreringer</summary>
 
             <div class="mood-list">
                 <!--Går gjennom og viser hver registrering-->
@@ -57,8 +58,9 @@
             </div>
         {% endif %}
     </div>
+ </details>
 </body>
-</html>
+</html />
 
 
 

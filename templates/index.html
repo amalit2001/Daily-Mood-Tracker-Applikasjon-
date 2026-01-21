@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="no">
+
+<!--Informasjon om siden og kobling til CSS-fil-->
 <head>
     <meta charset="UTF-8">
     <title>Daily Mood Tracker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
+<!--Samler alt innhold på midten av siden-->
     <div class="container">
         <h1>Daily Mood Tracker 🍃</h1>
         <p>Understand your mood and energy patterns.</p>
-        {% if saved %}
+        {% if saved %} <!--Viser melding når en registrering er lagret-->
     <div class="success-message">
         Humør registrert 🌿
     </div>
 {% endif %}
-
+<!--Skjema for å registrere humør, energinivå og refleksjon-->
         <form method="POST">
             <label for="mood">Humør i dag</label>
             <select name="mood" id="mood" required>
@@ -34,11 +38,13 @@
             <button type="submit">Lagre</button>
         </form>
 
-        {% if moods %}
+        <!--Viser tidligere registrerte humørlogger hvis de finnes-->
+        {% if moods %} 
             <h2>Tidligere registreringer</h2>
 
             <div class="mood-list">
-                {% for mood, energy, note, date in moods %}
+                <!--Går gjennom og viser hver registrering-->
+                {% for mood, energy, note, date in moods %} 
                     <div class="mood-card">
                         <strong>{{ date }}</strong><br>
                         Humør: {{ mood }}<br>

@@ -39,7 +39,8 @@ def save_mood_entry(mood):
         mood.get_mood(),
         mood.get_energy(),
         mood.get_note(),
-        str(mood.get_date())
+        # Legger til dato og tid
+        str(mood.get_datetime().strftime("%Y-%m-%d %H:%M"))
     ))
 
     conn.commit()

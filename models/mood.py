@@ -5,7 +5,7 @@ class Mood:  # Representerer en humørregistrering
         self._mood = mood_value
         self._energy = energy_level
         self._note = note_text
-        self._datetime = datetime.now()
+        self._datetime = datetime.now() # Lagrer dato og tid for registreringen
 
     # Metoder for å hente data fra objektet
     def get_mood(self):
@@ -20,7 +20,7 @@ class Mood:  # Representerer en humørregistrering
     def has_note(self):
         return bool(self._note)
 
-    def get_date(self):
+    def get_datetime(self):
         return self._datetime
 
     def __str__(self):

@@ -1,54 +1,55 @@
-Prosjektdokumentasjon
-
-Daily Mood Tracker
+Prosjektdokumentasjon – Daily Mood Tracker
 
 1. Beskrivelse av løsningen
 
-Daily Mood Tracker er en enkel webapplikasjon utviklet i Python og Flask som lar brukeren registrere daglig humør, energinivå og korte refleksjoner. Registreringene lagres lokalt i en SQLite-database og kan vises i ettertid.
+Daily Mood Tracker er en liten webbasert applikasjon laget i Python med Flask, der brukeren kan loggføre eget humør, energinivå og korte refleksjoner fra hverdagen.
+Alle registreringer lagres lokalt i en enkel SQL-database og kan hentes frem senere.
 
 Applikasjonen er laget som et personlig verktøy for økt bevissthet rundt egen trivsel og hverdag. Den er ikke ment som et medisinsk eller helsefaglig verktøy, men som et lavterskel refleksjonsverktøy.
 
 Målgruppe:
-Privatpersoner som ønsker et enkelt og oversiktlig digitalt verktøy for å følge eget humør og energinivå over tid.
+Applikasjonen er ment for personer som ønsker å reflektere over egen hverdag på en strukturert, men enkel måte.
 
 Problemet løsningen adresserer:
-Mange mangler en enkel måte å reflektere over egen hverdag på. Applikasjonen gir brukeren et strukturert, men ukomplisert system for dette uten krav til teknisk forkunnskap.
+I en travel hverdag er det lett å miste oversikt over egen trivsel.
+Applikasjonen gir brukeren et ukomplisert, men strukturert system for dette uten krav til teknisk forkunnskap.
 
 2. Krav
 2.1 Funksjonelle krav
 
 Applikasjonen skal:
 
-la brukeren registrere daglig humør
+- La brukeren registrere daglig humør (glad, rolig, stresset, trist)
 
-la brukeren velge energinivå (1–5)
+- La brukeren velge energinivå (1–5)
 
-gi mulighet for å skrive et kort notat
+- Gi mulighet for å skrive et kort refleksjons-notat
 
-lagre registreringene permanent
+- Lagre registreringene permanent
 
-vise tidligere registrerte logger
+- Vise tidligere registrerte logger
 
-gi tydelig tilbakemelding når en registrering er lagret
+- Gi tydelig tilbakemelding når en registrering er lagret
 
 2.2 Krav til brukervennlighet og enkelhet
 
-Applikasjonen skal være enkel å bruke uten forklaring
+- Applikasjonen skal være lett å bruke uten forklaring
 
-Brukergrensesnittet skal være oversiktlig og ryddig
+- Brukergrensesnittet skal være ryddig og oversiktlig
 
-Det skal være få valg per side
+- Det skal være få valg
 
-Skjemaelementer skal være tydelig merket
+- Skjemaelementer skal være tydelig merket
 
-Designet skal ha god kontrast og rolige farger
+- Designet skal ha rolige farger og god kontrast
+
 
 3. Systemstruktur
 3.1 Overordnet arkitektur
 
-Applikasjonen er bygget med tydelig separasjon av ansvar:
+Applikasjonen er strukturert slik at hver del av systemet har sitt eget ansvar:
 
-Frontend: HTML (Jinja templates) og CSS
+Frontend: HTML (Jinja-maler) og CSS
 
 Backend: Flask (Python)
 
@@ -59,16 +60,18 @@ Datalagring: SQLite via egen database-modul
 3.2 Mappestruktur
 daily-mood-tracker/
 │
-├── app.py
-├── database.py
 ├── models/
 │   └── mood.py
+│
+├── static/
+│   └── style.css
 │
 ├── templates/
 │   └── index.html
 │
-├── static/
-│   └── style.css
+├── .gitnore
+├── app.py
+├── database.py
 │
 ├── README.md
 └── reflection.md
@@ -76,7 +79,7 @@ daily-mood-tracker/
 3.3 Klasser og ansvar
 
 Mood (klasse)
-Representerer én humørregistrering.
+Representerer én enkel humørregistrering og inneholder tilhørende data.
 
 Attributter:
 
@@ -88,24 +91,25 @@ note
 
 date
 
-Klassen bruker innkapsling ved at data lagres som private attributter og hentes via metoder.
+Klassen er brukt for å samle data som naturlig hører sammen, og benytter innkapsling for å strukturere informasjonen.
 
 database.py
 Har ansvar for:
 
-opprettelse av database og tabell
+- Opprettelse av database og tabell
 
-lagring av humørdata
+- Lagring av humørdata
 
-henting av lagrede registreringer
+- Henting av lagrede registreringer
 
 app.py
+Har ansvar for:
 
-håndterer brukerinput via Flask-ruter
+- Håndtere brukerinput via Flask-ruter
 
-kobler frontend, datamodell og database
+- Kobler database, frontend og datamodell
 
-sender data videre til visning i HTML
+- Sender data videre til visning i HTML
 
 3.4 Enkel UML-inspirert skisse
 +----------------+
@@ -117,51 +121,51 @@ sender data videre til visning i HTML
 | date           |
 +----------------+
 
-Mood → brukes av → app.py  
-app.py → kommuniserer med → database.py
+Mood - brukes av app.py  
+app.py - kommuniserer med database.py
 
 4. Arbeidsprosess
 
-Arbeidet startet med å definere formål, målgruppe og funksjonalitet før koding. Deretter ble prosjektstrukturen planlagt for å sikre ryddig kode og god oversikt.
+Jeg startet prosjektet med å avklare hva løsningen skulle gjøre og hvem den var ment for. Deretter ble prosjektstrukturen godt planlagt for å sikre ryddig kode og god oversikt.
 
 Utviklingen ble gjennomført stegvis:
 
-Bekrefte at Flask-applikasjonen kjørte korrekt
+1. Bekrefte at Flask-applikasjonen kjørte korrekt
 
-Lage enkel HTML-visning
+2. Lage enkel HTML-visning
 
-Implementere skjema for brukerinput
+3. Implementere skjema for brukerinput
 
-Bruke objektorientert programmering for å strukturere data
+4. Bruke objektorientert programmering for å strukturere data
 
-Vise registreringer i brukergrensesnittet
+5. Vise registreringer i brukergrensesnittet
 
-Gå fra midlertidig lagring i minne til permanent lagring i SQLite-database
+6. Gå fra midlertidig lagring i minne til permanent lagring i SQLite-database
 
-Forbedre brukeropplevelse med visuell tilbakemelding
+7. Forbedre brukeropplevelse med visuell tilbakemelding
 
 Denne tilnærmingen gjorde det enklere å teste underveis og rette feil tidlig.
 
 5. Sikkerhet, GDPR og universell utforming
 5.1 Sikkerhet
 
-Applikasjonen kjører lokalt og har ingen brukerpålogging eller nettverkstilkobling. Dette reduserer angrepsflaten betydelig. I et større system ville tiltak som tilgangskontroll, validering av input og kryptering av data vært nødvendig.
+Applikasjonen kjører lokalt og har ingen brukerpålogging eller nettverkstilkobling. Dette reduserer angrepsflaten betydelig. I et større system ville det vært nødvendig med tiltak som kryptering, tilgangskontroll og validering av input av data.
 
 5.2 GDPR og personvern
 
-Applikasjonen behandler ikke direkte identifiserbare personopplysninger som navn, e-post eller fødselsnummer. Humørdata kan likevel anses som personlig informasjon. I et mer profesjonelt system burde brukeren informeres tydelig om datalagring, og data burde beskyttes bedre.
+Applikasjonen behandler ikke direkte identifiserbare personopplysninger som navn,  fødselsnummer eller e-post. Humørdata kan likevel anses som personlig informasjon. I et mer profesjonelt system bør brukeren informeres tydelig om datalagring, og data bør beskyttes bedre.
 
 5.3 Universell utforming
 
 Løsningen er laget med fokus på enkelhet og tilgjengelighet:
 
-tydelige labels på alle input-felt
+- Tydelige labels på alle input-felt
 
-god kontrast mellom tekst og bakgrunn
+- God kontrast mellom bakgrunn og tekst
 
-store klikkflater og ryddig layout
+- Ryddig layout og store klikkflater 
 
-Videre forbedringer kunne inkludert bedre støtte for tastaturnavigasjon og skjermlesere.
+Videre forbedringer kunne vært å ha bedre støtte for skjermlesere og tastaturnavigasjon.
 
 6. Bruk av ressurser og AI
 
@@ -169,4 +173,4 @@ Under arbeidet er dokumentasjon og AI-verktøy brukt som støtte i planleggings-
 
 7. Oppsummering
 
-Prosjektet viser grunnleggende og objektorientert programmering, strukturert kode, tydelig systemforståelse og faglig refleksjon. Fokus har vært på kvalitet, enkelhet og forståelse fremfor teknisk kompleksitet.
+Gjennom prosjektet har jeg vist forståelse for både grunnleggende og objektorientert programmering, samt hvordan god struktur og tydelig systemoppbygging bidrar til oversiktlig og vedlikeholdbar kode. Fokus har vært på enkelhet, forståelse og kvalitet, heller enn teknisk kompleksitet. Løsningen kan videreutvikles med funksjoner som brukerprofiler, grafisk visning av humør over tid eller tilpasning for mobilbruk.

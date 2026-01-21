@@ -1,6 +1,7 @@
-# Opprett database og tabell
+# Opprett og håndterer database og tabell
 import sqlite3
 
+# Navn på SQLite-databasen
 DB_NAME = "moods.db"
 
 # Funksjon for å koble til databasen

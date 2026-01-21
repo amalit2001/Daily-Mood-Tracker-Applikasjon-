@@ -24,8 +24,8 @@ class Mood:  # Representerer en humørregistrering
         return self._date
 
     def __str__(self):
-    return (
-        f"Dato: {self._date}, "
-        f"Humør: {self._mood}, "
-        f"Energi: {self._energy}"
-    )
+        return (
+           f"Dato: {self._date}, "
+           f"Humør: {self._mood}, "
+           f"Energi: {self._energy}"
+      )

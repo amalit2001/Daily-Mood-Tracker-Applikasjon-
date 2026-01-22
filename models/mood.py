@@ -1,11 +1,12 @@
 from datetime import datetime
 
-class Mood:  # Representerer en humørregistrering
+class Mood:
+    # Representerer en humørregistrering med dato og tidspunkt
     def __init__(self, mood_value, energy_level, note_text):
         self._mood = mood_value
         self._energy = energy_level
         self._note = note_text
-        self._datetime = datetime.now() # Lagrer dato og tid for registreringen
+        self._datetime = datetime.now()
 
     # Metoder for å hente data fra objektet
     def get_mood(self):
@@ -24,7 +25,7 @@ class Mood:  # Representerer en humørregistrering
         return self._datetime
 
     def __str__(self):
-         # Formaterer som: "2026-01-21 14:35 – Glad (Energi: 4)
+        # Formaterer som: "2026-01-21 14:35 – Glad (Energi: 4)"
         return (
            f"Dato: {self._datetime.strftime('%Y-%m-%d %H:%M')}, "
            f"Humør: {self._mood}, "

@@ -69,7 +69,7 @@ daily-mood-tracker/
 ├── templates/
 │   └── index.html
 │
-├── .gitnore
+├── .gitinore
 ├── app.py
 ├── database.py
 │
@@ -89,7 +89,7 @@ energy
 
 note
 
-date
+datetime
 
 Klassen er brukt for å samle data som naturlig hører sammen, og benytter innkapsling for å strukturere informasjonen.
 
@@ -118,7 +118,7 @@ Har ansvar for:
 | mood           |
 | energy         |
 | note           |
-| date           |
+| datetime       |
 +----------------+
 
 Mood - brukes av app.py  

@@ -38,31 +38,27 @@
             <button type="submit">Lagre</button>
         </form>
 
-        <!--Viser tidligere registrerte humørlogger hvis de finnes-->
-        {% if moods %}
+<!--Viser tidligere registrerte humørlogger hvis de finnes-->
+{% if moods %}
+  <details>
+    <summary>Se tidligere registreringer</summary>
 
-{% if moods|length > 1 %}
-    <details>
-      <summary>Se tidligere registreringer</summary>
-
-      <div class="mood-list">
-          {% for mood, energy, note, date in moods[:-1]|reverse %} 
-              <div class="mood-card">
-                  <strong>{{ date }}</strong><br>
-                  Humør: {{ mood }}<br>
-                  Energi: {{ energy }}<br>
-                  {% if note %}
-                      <em>{{ note }}</em>
-                  {% endif %}
-              </div>
-            {% endfor %}
-          </div>
-        </details>
-      {% endif %}
+    <div class="mood-list">
+      {% for mood, energy, note, date in moods|reverse %}
+        <div class="mood-card">
+          <strong>{{ date }}</strong><br>
+          Humør: {{ mood }}<br>
+          Energi: {{ energy }}<br>
+          {% if note %}
+            <em>{{ note }}</em>
+          {% endif %}
+        </div>
+      {% endfor %}
+     </div>
     </details>
-    {% else %}
-      <p>Ingen registreringer ennå. Legg inn ditt humør for i dag!</p>
-    {% endif %}
+   {% else %}
+     <p>Ingen registreringer ennå. Legg inn ditt humør for i dag!</p>
+   {% endif %}
   </div>
  </body>
 </html />

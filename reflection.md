@@ -10,7 +10,7 @@ Det som fungerte godt i prosjektet var at jeg planla løsningen før jeg startet
 
 Jeg valgte å holde løsningen på én side fordi funksjonaliteten er enkel og tydelig. Målet var å vise god struktur, objektorientering og kontroll på koden, ikke å lage flest mulig sider. En enkel løsning med ryddig struktur passet best til formålet.
 
-Jeg støtte på utfordringer underveis, spesielt når prosjektet ble større og det ble viktigere å holde god struktur. Disse utfordringene bidro til økt forståelse for viktigheten av ryddig kode, gode navn på variabler og funksjoner, samt tydelig separasjon av ansvar.
+Jeg støtte på utfordringer underveis, spesielt når prosjektet ble større og det ble viktigere å holde god struktur. En spesifikk utfordring var at skjemaet kunne vises dobbelt dersom man refresh’et siden. Jeg forsøkte å løse denne buggen, men fikk det ikke helt til. Likevel vises et varsel i nettleseren som advarer brukeren om at refresh kan føre til dobbel registrering. Disse utfordringene bidro til økt forståelse for viktigheten av ryddig kode, gode navn på variabler og funksjoner, samt tydelig separasjon av ansvar.
 
 Dersom jeg skulle gjort prosjektet på nytt, ville jeg brukt enda mer tid tidlig i prosessen på å skissere systemstrukturen og planlegge videre utvidelser. Jeg ville også vurdert bedre validering av brukerinput og flere forbedringer knyttet til tilgjengelighet.
 

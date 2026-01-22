@@ -53,7 +53,8 @@ def get_all_moods():
 
     cursor.execute(
      """SELECT mood_text, energy_level, note_text, entry_date
-        FROM mood_entries""")
+        FROM mood_entries
+        ORDER BY entry_date DESC""")
     rows = cursor.fetchall()
 
     conn.close()

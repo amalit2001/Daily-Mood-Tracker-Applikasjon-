@@ -1,6 +1,8 @@
 # Opprett og håndterer database og tabell
 import sqlite3
 
+from models import mood
+
 # Navn på SQLite-databasen
 DB_NAME = "moods.db"
 
@@ -32,16 +34,31 @@ def save_mood_entry(mood):
     conn = connect_db()
     cursor = conn.cursor()
 
+    # Sjekker om samme registrering allerede finnes (samme minutt)
     cursor.execute("""
-        INSERT INTO mood_entries (mood_text, energy_level, note_text, entry_date)
-        VALUES (?, ?, ?, ?)
+        SELECT COUNT(*) FROM mood_entries
+        WHERE mood_text = ?
+        AND energy_level = ?
+        AND entry_date = ?
     """, (
         mood.get_mood(),
         mood.get_energy(),
-        mood.get_note(),
-        # Legger til dato og tid
-        str(mood.get_datetime().strftime("%Y-%m-%d %H:%M"))
+        mood.get_datetime().strftime("%Y-%m-%d %H:%M")
     ))
+
+    exists = cursor.fetchone()[0]
+
+    if exists == 0:
+       cursor.execute("""
+           INSERT INTO mood_entries (mood_text, energy_level, note_text, entry_date)
+           VALUES (?, ?, ?, ?)
+       """, (
+           mood.get_mood(),
+           mood.get_energy(),
+           mood.get_note(),
+           # Legger til dato og tid
+           mood.get_datetime().strftime("%Y-%m-%d %H:%M")
+       ))
 
     conn.commit()
     conn.close()
